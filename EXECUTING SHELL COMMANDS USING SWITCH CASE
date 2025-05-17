@@ -1,0 +1,17 @@
+while test $ch='y'
+do
+echo enter the choice:
+echo 1.number of user logged in:
+echo 2.print calendar:
+echo 3.print date:
+echo 4.break:
+read d
+case $d in
+1) who i am;;
+2) cal 20;;
+3) date;;
+4) break;;
+esac
+echo " continue (y)"
+read ch
+done
