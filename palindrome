@@ -1,0 +1,17 @@
+echo "enter the string"
+read s
+n=`expr $s | wc -c`
+a=''
+while test $n -gt 0
+do
+x=`expr $s | cut -c $n`
+a=`echo $a$x`
+n=`expr $n-1 | bc`
+done
+echo "the reversed string is" $a
+if test "$s" = "$a"
+then
+echo "the given string is palindrome"
+else
+echo "the given string is not palindrome"
+fi
