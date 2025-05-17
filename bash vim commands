@@ -1,0 +1,10 @@
+mkdir foldername
+cd foldername
+touch file.c
+vim file.c
+press i or ctrl i
+after code
+right click
+esc : wq!
+gcc file.c
+./a.out
