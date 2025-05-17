@@ -1,0 +1,66 @@
+#include<stdio.h>
+#include<conio.h>
+struct process
+{
+int pn,bt,wt,tat;
+}p[10];
+void main()
+{
+int tq,i,j=0,n,b[10],ttat=0;
+float awt=0,atat=0;
+clrscr();
+printf("\n enter no. of process:");
+scanf("%d",&n);
+printf("\n enter input:\np.no\tburs tim\n");
+for(i=1;i<=n;i++)
+{
+scanf("%d %d",&p[i].pn,&p[i].bt);
+b[i]=p[i].bt;
+ttat=ttat+p[i].bt;
+}
+printf("\n enter time quantum:");
+scanf("%d",&tq);
+while(j<ttat)
+{
+ for(i=1;i<=n;i++)
+ {
+ if(p[i].bt!=0)
+ {
+ if(p[i].bt>tq)
+ {
+p[i].bt=p[i].bt-tq;
+j=j+tq;
+ }
+ else
+ {
+ j=j+p[i].bt;
+ p[i].tat=j;
+ p[i].wt=p[i].tat-b[i];
+ atat=atat+p[i].tat;
+ awt=awt+p[i].wt;
+ p[i].bt=0;
+ } } }}
+printf("\np.no\tburst\twait\tturn\n:");
+for(i=1;i<=n;i++)
+{
+printf("\n%d\t%d\t%d\t%d",p[i].pn,b[i],p[i].wt,p[i].tat);
+printf("\n");
+}
+printf("\n avg wait time is %f",awt/n);
+printf("\n avg turn time is %f",atat/n);
+getch();
+}
+/*OUTPUT:
+enter no. of process:3
+enter input:
+p.no burs tim
+1 24
+2 3
+3 3
+enter time quantum:4
+p.no burst wait turn:
+1 24 6 30
+2 3 4 7
+3 3 7 10
+avg wait time is 5.666667
+avg turn time is 15.666667 */
