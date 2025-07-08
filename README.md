@@ -21,4 +21,4 @@ This repository contains a collection of system programming examples related to 
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/username/os-code-examples.git
+   git clone https://github.com/Dhana-27/Operating_Systems.git
